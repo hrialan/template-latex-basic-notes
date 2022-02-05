@@ -11,6 +11,12 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex
+          
+      - name: upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+           name: pdf_test
+           path: main.pdf
 
       - name: Commit files to branch 'gh-pages' for public website
         if: github.ref == 'refs/heads/master'
